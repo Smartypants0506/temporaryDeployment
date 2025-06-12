@@ -15,6 +15,7 @@ interface ExtendedUser extends NextAuthUser {
 }
 
 export const authOptions: NextAuthOptions = {
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     CredentialsProvider({
       // Your existing credentials provider
@@ -158,5 +159,5 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  
 };
